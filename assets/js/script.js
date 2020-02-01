@@ -21,7 +21,7 @@ function generatePassword() {
 var passLength = parseInt(prompt("Choose a password Length between 8-128 characters"));
 
 if (passLength < 8 || passLength > 128) {
-  alert("Password length must be no less the 8 and no more then 128!")
+  alert("Password length must be no less then 8 and no more then 128!")
   return generatePassword();
 } 
 
@@ -53,13 +53,14 @@ if (confirmListNumbers) {
 }
 
 
-var confirmlistSpecials = confirm("do you want to use a special characters?");
+var confirmlistSpecials = confirm("Do you want to use a special characters?");
 
 if (confirmlistSpecials) {
   passwordChoice.push(listSpecials)
   listSpecials.push("nSpecial Characters")
   alert("You have selected to use Special Characters as a criteria!")
 }
+ 
 
 myPassword =""
 //check on your class activites and review your loops!
@@ -74,6 +75,8 @@ for (var i = 0; i <passLength; i++) {
 
 
 //check to make sure they pick atleast one of the 4 criteria
+
+
 //if all criteria is valaidated I will generate a password
 //return the password regenerated
 }
