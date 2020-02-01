@@ -18,26 +18,38 @@ function writePassword() {
 function generatePassword() {
 
 
-var passLength = parseInt(prompt("choose a password between 8-128 characters"));
+var passLength = parseInt(prompt("Choose a password Length between 8-128 characters"));
+
+if (passLength < 8 || passLength > 128) {
+  alert("Password length must be no less the 8 and no more then 128!")
+  return generatePassword();
+} 
 
 
-var confirmLowercase = confirm("do you want to use a lower case letter?");
+var confirmLowercase = confirm("Do you want to use a lower case letter?")
 
 if (confirmLowercase) {
   passwordChoice.push(listLowercase)
+  listLowercase.push("nLowercase Letters")
+  alert("You have selected to use Lower case letters as a criteria!")
+
 }
 
-var confirmUppercase = confirm("do you want to use Upper case letter?");
+var confirmUppercase = confirm("Do you want to use Upper case letter?")
 
 if (confirmUppercase) {
   passwordChoice.push(listUppercase)
+  listUppercase.push("nUppercase Letter")
+  alert("You have selected to use Upper case letters as a criteria!")
 }
 
 
-var confirmListNumbers = confirm("do you want to use a numbers?");
+var confirmListNumbers = confirm("Do you want to use a numbers?")
 
 if (confirmListNumbers) {
   passwordChoice.push(listNumbers)
+  listNumbers.push("nNumbers")
+  alert("You have selected to use Numbers as a criteria!")
 }
 
 
@@ -45,15 +57,18 @@ var confirmlistSpecials = confirm("do you want to use a special characters?");
 
 if (confirmlistSpecials) {
   passwordChoice.push(listSpecials)
+  listSpecials.push("nSpecial Characters")
+  alert("You have selected to use Special Characters as a criteria!")
 }
 
 myPassword =""
 //check on your class activites and review your loops!
-for (var i = 0; i <passLength; i++){
+for (var i = 0; i <passLength; i++) {
   var arrayP = Math.floor(Math.random() * passwordChoice.length)
   var charNums = Math.floor(Math.random() * passwordChoice[arrayP].length)
-  // myPassword += passwordChoice[arrayP][charNums]
+  myPassword += passwordChoice[arrayP][charNums]
   console.log(passwordChoice)
+  return myPassword
 }
 //check to make sure that the pw {} is between 8 -128 characters
 
