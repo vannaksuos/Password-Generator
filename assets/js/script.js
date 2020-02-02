@@ -6,33 +6,38 @@ var listUppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O'
 var listNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var listSpecials = [',','.','<','>','/','?','"',"'",';',':','+','-','*','=','\\','|','[',']','{','}','_','(',')','&','^','$','#','@','!','`','~'];
 var passwordChoice = []
-
-
+var newPassWord = []
+var emptyArray =[]
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  passwordText.value = password
+}
 
-  passwordText.value = password;
+function passWordValidator() {
 
 }
 
+
+
 function generatePassword() {
 
-
-var passLength = parseInt(prompt("Choose a password Length between 8-128 characters"));
+  var passLength = parseInt(prompt("Choose a password Length between 8-128 characters"))
 
 if (passLength < 8 || passLength > 128) {
   alert("Password length must be no less then 8 and no more then 128!")
   return generatePassword();
 } 
 
+
+
 var confirmLowercase = confirm("Do you want to use a lower case letter?")
 
 if (confirmLowercase) {
   passwordChoice.push(listLowercase)
   listLowercase.push("nLowercase Letters")
+  emptyArray.push("nemptyArray")
   alert("You have selected to use Lower case letters as a criteria!")
-
 }
 
 var confirmUppercase = confirm("Do you want to use Upper case letter?")
@@ -51,17 +56,12 @@ if (confirmListNumbers) {
   alert("You have selected to use Numbers as a criteria!")
 }
 
-var confirmlistSpecials = confirm("Do you want to use a special characters?");
+var confirmlistSpecials = confirm("Do you want to use a special characters?")
 
 if (confirmlistSpecials) {
   passwordChoice.push(listSpecials)
   listSpecials.push("nSpecial Characters")
   alert("You have selected to use Special Characters as a criteria!")
-}
-
-else {
-  alert("YOU NEED TO SELECT ATLEAST ONE CRITERIA")
- 
 }
 
 // if (confirmpasswordChoice) {
