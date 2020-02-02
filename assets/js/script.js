@@ -7,6 +7,7 @@ var listNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var listSpecials = [',','.','<','>','/','?','"',"'",';',':','+','-','*','=','\\','|','[',']','{','}','_','(',')','&','^','$','#','@','!','`','~'];
 var passwordChoice = []
 
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -25,7 +26,6 @@ if (passLength < 8 || passLength > 128) {
   return generatePassword();
 } 
 
-
 var confirmLowercase = confirm("Do you want to use a lower case letter?")
 
 if (confirmLowercase) {
@@ -43,7 +43,6 @@ if (confirmUppercase) {
   alert("You have selected to use Upper case letters as a criteria!")
 }
 
-
 var confirmListNumbers = confirm("Do you want to use a numbers?")
 
 if (confirmListNumbers) {
@@ -52,7 +51,6 @@ if (confirmListNumbers) {
   alert("You have selected to use Numbers as a criteria!")
 }
 
-
 var confirmlistSpecials = confirm("Do you want to use a special characters?");
 
 if (confirmlistSpecials) {
@@ -60,26 +58,36 @@ if (confirmlistSpecials) {
   listSpecials.push("nSpecial Characters")
   alert("You have selected to use Special Characters as a criteria!")
 }
+
+else {
+  alert("YOU NEED TO SELECT ATLEAST ONE CRITERIA")
  
+}
+
+// if (confirmpasswordChoice) {
+
+//   passwordChoice.length
+// } 
 
 myPassword =""
-//check on your class activites and review your loops!
+
 for (var i = 0; i <passLength; i++) {
   var arrayP = Math.floor(Math.random() * passwordChoice.length)
   var charNums = Math.floor(Math.random() * passwordChoice[arrayP].length)
   myPassword += passwordChoice[arrayP][charNums]
-  console.log(passwordChoice)
   return myPassword
 }
-//check to make sure that the pw {} is between 8 -128 characters
 
+console.log(passwordChoice)
 
 //check to make sure they pick atleast one of the 4 criteria
+
+}
 
 
 //if all criteria is valaidated I will generate a password
 //return the password regenerated
-}
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
