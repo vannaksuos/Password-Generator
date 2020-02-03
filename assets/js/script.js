@@ -6,8 +6,7 @@ var listUppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
 var listNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var listSpecials = [',', '.', '<', '>', '/', '?', '"', "'", ';', ':', '+', '-', '*', '=', '\\', '|', '[', ']', '{', '}', '_', '(', ')', '&', '^', '$', '#', '@', '!', '`', '~'];
 
-var newPassWord = []
-var emptyArray = []
+
 function writePassword(pass) {
   var passwordText = document.querySelector("#password");
   passwordText.value = pass
